@@ -20,7 +20,7 @@ enum class Suit{
 
 // TODO enum for the ranks
 
-enum class Rank(val value: Int val symbol: String){
+enum class Rank(val value: Int, val symbol: String){
     ACE(1, "A"),
     TWO(2, "2"),
     THREE(3, "3"),
