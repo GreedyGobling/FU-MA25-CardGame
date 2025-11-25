@@ -16,6 +16,16 @@ class BlackJack {
         dealerHand.addCard(deck.draw())
 
     }
+
+    fun playerHit(): Card {
+        val card = deck.draw()
+        playerHand.addCard(card)
+        if (playerHand.isBust()) {
+            state = GameState.Game_Over
+        }
+        return card
+    }
+
     fun plauerStand() {
         state = GameState.Dealer_Turn
         dealerPlay()
@@ -28,4 +38,8 @@ class BlackJack {
         }
     }
 
+    fun getPlayerHand(): Hand = playerHand
+    fun getDealerHand(): Hand = dealerHand
+    fun getState(): GameState = state
+    fun getDeck(): Deck = deck
 }
