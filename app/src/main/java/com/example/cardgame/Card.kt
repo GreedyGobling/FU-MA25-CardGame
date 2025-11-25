@@ -12,15 +12,18 @@ data class Card(
             Suit.Spades -> "♠"
         }
     }
+
+    fun isRed(): Boolean {
+    return suit == Suit.Heart || suit == Suit.Diamond
+    }
 }
 
 enum class Suit{
     Heart, Spades, Clubs, Diamond
 }
 
-// TODO enum for the ranks
 
-enum class Rank(val value: Int, val symbol: String){
+enum class Rank(val value: Int, val symbol: String){ 
     ACE(1, "A"),
     TWO(2, "2"),
     THREE(3, "3"),
@@ -31,7 +34,7 @@ enum class Rank(val value: Int, val symbol: String){
     EIGHT(8, "8"),
     NINE(9, "9"),
     TEN(10, "10"),
-    JACK(11, "J"),
-    QUEEN(12, "Q"),
-    KING(13, "K")
+    JACK(10, "J"),
+    QUEEN(10, "Q"),
+    KING(10, "K")
 }
