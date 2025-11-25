@@ -16,5 +16,16 @@ class BlackJack {
         dealerHand.addCard(deck.draw())
 
     }
+    fun plauerStand() {
+        state = GameState.Dealer_Turn
+        dealerPlay()
+    }
+
+    fun dealerPlay(){
+            // 16 minimal or 1, 2 higher
+        while (dealerHand.getValue() < 16) {
+            dealerHand.addCard(deck.draw())
+        }
+    }
 
 }
