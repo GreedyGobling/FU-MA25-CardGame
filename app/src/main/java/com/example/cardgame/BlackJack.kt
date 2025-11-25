@@ -38,6 +38,18 @@ class BlackJack {
         }
     }
 
+
+    fun determineWinner() {
+        val playerValue = playerHand.getValue()
+        val dealerValue = dealerHand.getValue()
+
+        // TODO make game result
+        //return when {
+            //playerValue > dealerValue
+        //}
+
+    }
+
     fun getPlayerHand(): Hand = playerHand
     fun getDealerHand(): Hand = dealerHand
     fun getState(): GameState = state
