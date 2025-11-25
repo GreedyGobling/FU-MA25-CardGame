@@ -16,6 +16,7 @@ data class Card(
     fun isRed(): Boolean {
     return suit == Suit.Heart || suit == Suit.Diamond
     }
+
 }
 
 enum class Suit{
