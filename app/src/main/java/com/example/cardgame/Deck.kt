@@ -21,6 +21,7 @@ class Deck {
     fun reset() {
         cards.clear()
 
+        // should do 54 cards. 1 ide hard dificultiy give it 4 or 6 decks
         for (suit in Suit.values()) {
             for (rank in Rank.values()){
                 cards.add(Card(suit, rank))
