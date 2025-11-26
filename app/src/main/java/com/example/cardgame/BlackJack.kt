@@ -15,6 +15,7 @@ class BlackJack {
         playerHand.addCard(deck.draw())
         dealerHand.addCard(deck.draw())
 
+        state = GameState.Player_Turn
     }
 
     fun playerHit(): Card {
@@ -26,7 +27,7 @@ class BlackJack {
         return card
     }
 
-    fun plauerStand() {
+    fun playerStand() {
         state = GameState.Dealer_Turn
         dealerPlay()
     }
