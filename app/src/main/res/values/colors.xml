@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+
     <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#DC143C</color>
+
+    <color name="casino_green">#0b6623</color>
+    <color name="casino_darkgreen">#064018</color>
+
+    <color name="win">#3CAF50</color>
+    <color name="lose">#F44336</color>
+    <color name="push">#FFC107</color>
+
+
 </resources>
