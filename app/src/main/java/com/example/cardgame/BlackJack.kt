@@ -39,13 +39,19 @@ class BlackJack {
     }
 
 
-    fun determineWinner() {
+    fun determineWinner(): GameResult {
         val playerValue = playerHand.getValue()
         val dealerValue = dealerHand.getValue()
 
         // TODO make game result
-        //return when {
-            //playerValue > dealerValue
+        return when {
+        playerHand.isBust() -> GameResult.PlayerBust
+        playerHand.isBlackJack() && !dealerHand.isBlackJack() -> GameResult.PlayerBlackJack
+        dealerHand.isBlackJack() && !playerHand.isBlackJack() -> GameResult.DealerWin
+        dealerHand.isBust() -> GameResult.DealerBust
+        playerValue > dealerValue -> GameResult.PlayerWin
+        dealerValue > playerValue -> GameResult.DealerWin
+        else -> GameResult.Push
         //}
 
     }
@@ -54,4 +60,6 @@ class BlackJack {
     fun getDealerHand(): Hand = dealerHand
     fun getState(): GameState = state
     fun getDeck(): Deck = deck
+
+    }
 }
