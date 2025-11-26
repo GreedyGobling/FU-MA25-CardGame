@@ -44,7 +44,6 @@ class BlackJack {
         val playerValue = playerHand.getValue()
         val dealerValue = dealerHand.getValue()
 
-        // TODO make game result
         return when {
         playerHand.isBust() -> GameResult.PlayerBust
         playerHand.isBlackJack() && !dealerHand.isBlackJack() -> GameResult.PlayerBlackJack
@@ -53,8 +52,8 @@ class BlackJack {
         playerValue > dealerValue -> GameResult.PlayerWin
         dealerValue > playerValue -> GameResult.DealerWin
         else -> GameResult.Push
-        //}
 
+    }
     }
 
     fun getPlayerHand(): Hand = playerHand
@@ -62,5 +61,4 @@ class BlackJack {
     fun getState(): GameState = state
     fun getDeck(): Deck = deck
 
-    }
 }
