@@ -1,5 +1,6 @@
 package com.example.cardgame
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,22 +13,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         binding.startmenu.setOnClickListener {
-            // TODO
-            // if active game is true show 2 button. continy and new game
-            // if active game is false start new game
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+
         }
-
-
     }
 
-
-
-    fun addStartMenu(){
-        val startMenu = Gamemenu()
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.container, startMenu, startMenu)
-    }
 }
