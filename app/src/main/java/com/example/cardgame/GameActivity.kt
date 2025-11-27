@@ -29,7 +29,14 @@ class GameActivity : AppCompatActivity() {
 }
 
     private fun startNewRound(){
+        // clear ui
 
+        game.startNewRound()
+
+        //init hands
+        if(game.getPlayerHand().isBlackJack()){
+            onStandClick()
+        }
     }
     private fun onHitClick(){
         game.playerHit()
