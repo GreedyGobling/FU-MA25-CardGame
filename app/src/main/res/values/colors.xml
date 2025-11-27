@@ -9,6 +9,9 @@
     <color name="casino_green">#0b6623</color>
     <color name="casino_darkgreen">#064018</color>
 
+    <color name="button_hit">#2197f3</color>
+    <color name="button_stand">#FF9800</color>
+
     <color name="win">#3CAF50</color>
     <color name="lose">#F44336</color>
     <color name="push">#FFC107</color>

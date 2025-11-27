@@ -22,11 +22,15 @@ class GameActivity : AppCompatActivity() {
     binding.bstand.setOnClickListener {
         onStandClick()
     }
-        binding.bhit.setOnClickListener {
-            onHitClick()
-        }
+    binding.bhit.setOnClickListener {
+        onHitClick()
     }
 
+}
+
+    private fun startNewRound(){
+
+    }
     private fun onHitClick(){
         game.playerHit()
         //TODO update for hand draw
