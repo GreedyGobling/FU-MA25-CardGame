@@ -19,16 +19,22 @@ class GameActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Buttons hit and stand
+    binding.bstand.setOnClickListener {
+        onStandClick()
+    }
+        binding.bhit.setOnClickListener {
+            onHitClick()
+        }
     }
 
-    private fun onHitClicked(){
+    private fun onHitClick(){
         game.playerHit()
         //TODO update for hand draw
         if (game.getPlayerHand().isBust()) {
             endGame()
         }
     }
-    private fun onStandClicked(){
+    private fun onStandClick(){
         game.playerStand()
         // update dealerhand if needed
         endGame()
