@@ -50,7 +50,6 @@ class GameActivity : AppCompatActivity() {
     private fun updatePlayerHand(){
         val playerHand = game.getPlayerHand()
         for (card in playerHand.getCards()) {
-            //TODO show cards in container
             displayCard(card, binding.playerHandContainer)
         }
     }
