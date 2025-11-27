@@ -51,6 +51,7 @@ class GameActivity : AppCompatActivity() {
         val playerHand = game.getPlayerHand()
         for (card in playerHand.getCards()) {
             //TODO show cards in container
+            displayCard(card, binding.playerHandContainer)
         }
     }
 
@@ -67,7 +68,7 @@ class GameActivity : AppCompatActivity() {
         endGame()
     }
 
-    private fun displayCard(card: Card){
+    private fun displayCard(card: Card, container: LinearLayout){
         val cardBinding = CardViewBinding.inflate(LayoutInflater.from(this))
         val cardView = cardBinding.root
 
@@ -80,7 +81,7 @@ class GameActivity : AppCompatActivity() {
             ContextCompat.getColor(this, R.color.black)
         }
 
-
+        container.addView(cardView)
     }
 
 
