@@ -4,7 +4,7 @@ class BlackJack {
     private val deck = Deck()
     private val playerHand = Hand()
     private val dealerHand = Hand()
-    private var state = GameState.Betting
+    private var state = GameState.BETTING
 
     fun startNewRound(){
         playerHand.clear()
@@ -15,20 +15,20 @@ class BlackJack {
         playerHand.addCard(deck.draw())
         dealerHand.addCard(deck.draw())
 
-        state = GameState.Player_Turn
+        state = GameState.PLAYER_TURN
     }
 
     fun playerHit(): Card {
         val card = deck.draw()
         playerHand.addCard(card)
         if (playerHand.isBust()) {
-            state = GameState.Game_Over
+            state = GameState.GAME_OVER
         }
         return card
     }
 
     fun playerStand() {
-        state = GameState.Dealer_Turn
+        state = GameState.DEALER_TURN
         dealerPlay()
     }
 
@@ -45,13 +45,13 @@ class BlackJack {
         val dealerValue = dealerHand.getValue()
 
         return when {
-        playerHand.isBust() -> GameResult.PlayerBust
-        playerHand.isBlackJack() && !dealerHand.isBlackJack() -> GameResult.PlayerBlackJack
-        dealerHand.isBlackJack() && !playerHand.isBlackJack() -> GameResult.DealerWin
-        dealerHand.isBust() -> GameResult.DealerBust
-        playerValue > dealerValue -> GameResult.PlayerWin
-        dealerValue > playerValue -> GameResult.DealerWin
-        else -> GameResult.Push
+        playerHand.isBust() -> GameResult.PLAYERBUST
+        playerHand.isBlackJack() && !dealerHand.isBlackJack() -> GameResult.PLAYEBLACKJACK
+        dealerHand.isBlackJack() && !playerHand.isBlackJack() -> GameResult.DEALERBLACKJACK
+        dealerHand.isBust() -> GameResult.DEALERBUST
+        playerValue > dealerValue -> GameResult.PLAYERWIN
+        dealerValue > playerValue -> GameResult.DEALERWIN
+        else -> GameResult.PUSH
 
     }
     }

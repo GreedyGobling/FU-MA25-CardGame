@@ -50,6 +50,8 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun updatePlayerHand(){
+        binding.playerHandContainer.removeAllViews()
+
         val playerHand = game.getPlayerHand()
         for (card in playerHand.getCards()) {
             displayCard(card, binding.playerHandContainer)
