@@ -58,11 +58,13 @@ class GameActivity : AppCompatActivity() {
 
     private fun onHitClick(){
         game.playerHit()
+        updatePlayerHand()
         //TODO update for hand draw
         if (game.getPlayerHand().isBust()) {
             endGame()
         }
     }
+
     private fun onStandClick(){
         game.playerStand()
         // update dealerhand if needed
