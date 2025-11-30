@@ -1,5 +1,6 @@
 package com.example.cardgame
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -103,8 +104,41 @@ class GameActivity : AppCompatActivity() {
 
     private fun endGame(){
         val result = game.determineWinner()
-
+        showGameResult(result)
     }
 
-    //TODO create Card for win/lose
+    private fun showGameResult(result: GameResult){
+        val (message, colorRes) = when (result) {
+            GameResult.PLAYEBLACKJACK -> "BLACKJACK YOU WIN" to R.color.casino_green
+            GameResult.DEALERBLACKJACK -> "BLACKJACK YOU WIN" to R.color.casino_green
+            GameResult.PLAYERWIN -> "BLACKJACK YOU WIN" to R.color.casino_green
+            GameResult.DEALERWIN -> "BLACKJACK YOU WIN" to R.color.casino_green
+            GameResult.PUSH -> "BLACKJACK YOU WIN" to R.color.casino_green
+            GameResult.PLAYERBUST -> "BLACKJACK YOU WIN" to R.color.casino_green
+            GameResult.DEALERBUST-> "BLACKJACK YOU WIN" to R.color.casino_green
+            // TODO make color for win/lose and CHANGE TEXT
+
+        }
+
+        // this create the box
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        builder.setTitle("Game Over")
+        builder.setMessage(message)
+        builder.setCancelable(false)
+
+        val dialog = builder.create()
+        dialog.setOnShowListener {
+            val messageView = dialog.findViewById<android.widget.TextView>(android.R.id.message)
+            messageView?.setTextColor(ContextCompat.getColor(this, colorRes))
+            messageView?.textSize = 24f
+            messageView?.gravity = android.view.Gravity.CENTER
+        }
+
+
+        builder.setPositiveButton("NEW GAME") { _, _ ->
+            startNewRound()
+        }
+
+        builder.show()
+    }
 }
