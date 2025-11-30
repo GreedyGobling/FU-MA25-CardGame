@@ -45,11 +45,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/playerScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="score"
         android:textColor="@color/white"
-        android:id="@+id/playerScore" />
+        app:layout_constraintBottom_toTopOf="@+id/bhit"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
 
     <HorizontalScrollView
         android:id="@+id/PlayerHandScoll"
@@ -61,6 +64,23 @@
         app:layout_constraintStart_toStartOf="parent" >
         <LinearLayout
             android:id="@+id/playerHandContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp" />
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/dealerHandScoll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/dealerHandContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp" />

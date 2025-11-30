@@ -37,11 +37,13 @@ class GameActivity : AppCompatActivity() {
     private fun startNewRound(){
         // clear ui
         binding.playerHandContainer.removeAllViews()
+        binding.dealerHandContainer.removeAllViews()
 
         game.startNewRound()
 
         //init hands
         updatePlayerHand()
+        updateDealerHand()
 
 
         if(game.getPlayerHand().isBlackJack()){
@@ -60,6 +62,13 @@ class GameActivity : AppCompatActivity() {
         binding.playerScore.text = "Score: ${playerHand.getValue()}"
     }
 
+    private fun updateDealerHand(){
+        binding.dealerHandContainer.removeAllViews()
+
+        var dealerhand = game.getDealerHand()
+        val cards = dealerhand.getCards()
+    }
+
     private fun onHitClick(){
         game.playerHit()
         updatePlayerHand()
@@ -71,7 +80,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun onStandClick(){
         game.playerStand()
-        // update dealerhand if needed
+        updateDealerHand()
         endGame()
     }
 
@@ -94,6 +103,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun endGame(){
         val result = game.determineWinner()
+
     }
 
     //TODO create Card for win/lose
