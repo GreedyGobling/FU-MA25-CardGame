@@ -68,6 +68,10 @@ class GameActivity : AppCompatActivity() {
 
         var dealerhand = game.getDealerHand()
         val cards = dealerhand.getCards()
+
+        cards.forEachIndexed { index, card ->
+            displayCard(card, binding.dealerHandContainer)
+        }
     }
 
     private fun onHitClick(){
