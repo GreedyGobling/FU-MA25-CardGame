@@ -59,6 +59,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scrollbars="none"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" >
@@ -67,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center_horizontal"
             android:padding="8dp" />
 
     </HorizontalScrollView>
@@ -77,6 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:scrollbars="none"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/playerScore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:gravity="center_horizontal"
             android:padding="8dp" />
 
     </HorizontalScrollView>
