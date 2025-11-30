@@ -109,13 +109,13 @@ class GameActivity : AppCompatActivity() {
 
     private fun showGameResult(result: GameResult){
         val (message, colorRes) = when (result) {
-            GameResult.PLAYEBLACKJACK -> "BLACKJACK YOU WIN" to R.color.win
-            GameResult.DEALERBLACKJACK -> "BLACKJACK YOU WIN" to R.color.lose
-            GameResult.PLAYERWIN -> "BLACKJACK YOU WIN" to R.color.win
-            GameResult.DEALERWIN -> "BLACKJACK YOU WIN" to R.color.lose
-            GameResult.PUSH -> "BLACKJACK YOU WIN" to R.color.push
-            GameResult.PLAYERBUST -> "BLACKJACK YOU WIN" to R.color.lose
-            GameResult.DEALERBUST-> "BLACKJACK YOU WIN" to R.color.win
+            GameResult.PLAYEBLACKJACK -> "BLACKJACK! YOU WIN!" to R.color.win
+            GameResult.DEALERBLACKJACK -> "DEALER HAS BLACKJACK. YOU LOSE." to R.color.lose
+            GameResult.PLAYERWIN -> "YOU WIN!" to R.color.win
+            GameResult.DEALERWIN -> "DEALER WINS." to R.color.lose
+            GameResult.PUSH -> "PUSH" to R.color.push
+            GameResult.PLAYERBUST -> "YOU BUSTED. DEALER WINS." to R.color.lose
+            GameResult.DEALERBUST-> "DEALER BUSTED. YOU WIN!" to R.color.win
 
         }
 
