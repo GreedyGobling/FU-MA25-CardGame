@@ -56,6 +56,8 @@ class GameActivity : AppCompatActivity() {
         for (card in playerHand.getCards()) {
             displayCard(card, binding.playerHandContainer)
         }
+
+        binding.playerScore.text = "Score: ${playerHand.getValue()}"
     }
 
     private fun onHitClick(){
