@@ -2,4 +2,4 @@ need to write down problems
 
 issues 
 
-:/ card problem way to many cards
+on ipad don't look awesome. place cards in center
