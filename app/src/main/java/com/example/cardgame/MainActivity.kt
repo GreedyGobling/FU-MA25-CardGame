@@ -1,5 +1,6 @@
 package com.example.cardgame
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+
+        binding.textView.text = "Games Played: ${GameStats.getGamesPlayed(this)}"
     }
 
 }
