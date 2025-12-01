@@ -108,7 +108,11 @@ class GameActivity : AppCompatActivity() {
 
     private fun endGame(){
         val result = game.determineWinner()
+
+        GameStats.saveGameResult(this, result)
         showGameResult(result)
+
+
     }
 
     private fun showGameResult(result: GameResult){
