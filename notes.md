@@ -1,6 +1,10 @@
+# Notes 
 need to write down problems 
 
-issues 
+
+reason for no branches failed to use twice :)
+
+### issues 
 
 on ipad don't look awesome. place cards in center
 
