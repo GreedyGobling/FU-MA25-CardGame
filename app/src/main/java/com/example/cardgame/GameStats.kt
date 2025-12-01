@@ -11,6 +11,7 @@ object GameStats {
     private const val KEY_CURRENT_STREAK = "current_streak"
     private const val KEY_BEST_STREAK = "best_streak"
 
+    // TODO fix savegameresult and GET for all other
     fun saveGameResult(context: Context, result: GameResult) {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val editor = prefs.edit()
