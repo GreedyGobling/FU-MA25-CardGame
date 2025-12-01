@@ -60,7 +60,7 @@ class GameActivity : AppCompatActivity() {
             displayCard(card, binding.playerHandContainer)
         }
 
-        binding.playerScore.text = "Score: ${playerHand.getValue()}"
+        binding.playerScore.text = "${playerHand.getValue()}"
     }
 
     private fun updateDealerHand(){
