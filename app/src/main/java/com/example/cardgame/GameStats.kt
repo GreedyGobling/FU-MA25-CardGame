@@ -40,6 +40,11 @@ object GameStats {
             editor.putInt(KEY_GAMES_LOST, gamesLost + 1)
             editor.putInt(KEY_CURRENT_STREAK, 0)
         }
+
+        if (result == GameResult.PLAYEBLACKJACK) {
+            val blackjacks = prefs.getInt(KEY_BLACKJACKS, 0)
+            editor.putInt(KEY_BLACKJACKS, blackjacks + 1)
+        }
         editor.apply()
     }
 
