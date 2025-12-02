@@ -77,7 +77,6 @@ class GameActivity : AppCompatActivity() {
     private fun onHitClick(){
         game.playerHit()
         updatePlayerHand()
-        //TODO update for hand draw
         if (game.getPlayerHand().isBust()) {
             endGame()
         }
