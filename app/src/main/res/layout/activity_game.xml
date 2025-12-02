@@ -50,12 +50,14 @@
         android:id="@+id/playerScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:text="score"
         android:textColor="@color/white"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bhit"
-        tools:layout_editor_absoluteX="16dp" />
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/PlayerHandScoll"
+        app:layout_constraintEnd_toEndOf="@+id/PlayerHandScoll"
+        app:layout_constraintStart_toStartOf="@+id/PlayerHandScoll" />
 
     <HorizontalScrollView
         android:id="@+id/PlayerHandScoll"
