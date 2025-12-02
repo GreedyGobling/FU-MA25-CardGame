@@ -53,4 +53,28 @@ object GameStats {
             .getInt(KEY_GAMES_PLAYED, 0)
     }
 
+    fun getGamesWon(context: Context): Int {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .getInt(KEY_GAMES_WON, 0)
+    }
+
+    fun getGamesLost(context: Context): Int {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .getInt(KEY_GAMES_LOST, 0)
+    }
+
+    fun getBlackJackCount(context: Context): Int {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .getInt(KEY_BLACKJACKS, 0)
+    }
+
+    fun getCurrentStreak(context: Context): Int {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .getInt(KEY_CURRENT_STREAK, 0)
+    }
+
+    fun getBestStreak(context: Context): Int {
+        return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .getInt(KEY_BEST_STREAK, 0)
+    }
 }
