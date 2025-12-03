@@ -80,6 +80,10 @@ class GameActivity : AppCompatActivity() {
         if (game.getPlayerHand().isBust()) {
             endGame()
         }
+        if (game.getPlayerHand().getValue() == 21){
+            endGame()
+        }
+
     }
 
     private fun onStandClick(){
