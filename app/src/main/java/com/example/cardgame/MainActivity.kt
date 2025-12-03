@@ -30,8 +30,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        binding.textView.text = "Games Played: ${GameStats.getGamesPlayed(this)}"
-    }
 }
