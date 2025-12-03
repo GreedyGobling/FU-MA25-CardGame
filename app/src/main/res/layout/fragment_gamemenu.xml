@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".Gamemenu">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Game Menu"
+        android:textSize="24sp"
+        android:gravity="center"/>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnNewgame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/btnWIP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WIP"
+        android:textSize="24sp"/>
+
+</LinearLayout>
