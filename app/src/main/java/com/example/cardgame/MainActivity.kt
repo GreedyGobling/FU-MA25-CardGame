@@ -16,13 +16,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
         binding.startmenu.setOnClickListener {
-            val intent = Intent(this, GameActivity::class.java)
-            startActivity(intent)
-
+            //val intent = Intent(this, GameActivity::class.java)
+            //startActivity(intent)
+            val gameMenu = Gamemenu()
+            gameMenu.show(supportFragmentManager, "GameMenuDialog")
         }
-
 
     }
 
@@ -30,5 +31,4 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         binding.textView.text = "Games Played: ${GameStats.getGamesPlayed(this)}"
     }
-
 }
