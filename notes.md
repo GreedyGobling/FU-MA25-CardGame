@@ -1,8 +1,11 @@
 # Notes 
 need to write down problems 
 
-
 reason for no branches failed to use twice :)
+
+
+## update 
+the game-menu 
 
 ### issues 
 
