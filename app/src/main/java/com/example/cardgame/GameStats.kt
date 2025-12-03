@@ -76,4 +76,9 @@ object GameStats {
         return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             .getInt(KEY_BEST_STREAK, 0)
     }
+
+    fun resetStats(context: Context){
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .edit().clear().apply()
+    }
 }
