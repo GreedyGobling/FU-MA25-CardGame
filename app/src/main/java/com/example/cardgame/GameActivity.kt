@@ -130,6 +130,7 @@ class GameActivity : AppCompatActivity() {
 
         }
 
+        // replace this with a fragment like gameMenu
         // this create the box
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         builder.setTitle("Game Over")

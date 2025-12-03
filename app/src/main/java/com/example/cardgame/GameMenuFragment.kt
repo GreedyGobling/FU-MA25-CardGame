@@ -18,7 +18,10 @@ class GameMenuFragment : DialogFragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_gamemenu,container, false)
 
+        // if current streak > 0 continy
         val newGameButton = view.findViewById<Button>(R.id.btnNewgame)
+
+        // new game if above is true
         val wipButton = view.findViewById<Button>(R.id.btnWIP)
 
         newGameButton.setOnClickListener {
