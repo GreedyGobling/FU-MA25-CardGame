@@ -1,7 +1,5 @@
 package com.example.cardgame
 
-import android.R
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding.startmenu.setOnClickListener {
             //val intent = Intent(this, GameActivity::class.java)
             //startActivity(intent)
-            val gameMenu = Gamemenu()
+            val gameMenu = GameMenuFragment()
             gameMenu.show(supportFragmentManager, "GameMenuDialog")
         }
 
