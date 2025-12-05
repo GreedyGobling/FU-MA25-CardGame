@@ -18,6 +18,13 @@ class GameResultFragment : DialogFragment() {
 
     private lateinit var gameResult: GameResult
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            gameResult = it.getSerializable("game_result") as GameResult
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

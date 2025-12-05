@@ -119,8 +119,11 @@ class GameActivity : AppCompatActivity() {
 
     }
 
-    private fun showGameResult(resul: GameResult) {
+    private fun showGameResult(result: GameResult) {
         val fragment = GameResultFragment()
+        val args = Bundle()
+        args.putSerializable("game_result", result)
+        fragment.arguments = args
         fragment.show(supportFragmentManager, "GameResultFragment")
     }
 
