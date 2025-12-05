@@ -36,7 +36,7 @@ class GameActivity : AppCompatActivity() {
 
 }
 
-    private fun startNewRound(){
+    fun startNewRound(){
         // clear ui
         binding.playerHandContainer.removeAllViews()
         binding.dealerHandContainer.removeAllViews()
