@@ -1,12 +1,14 @@
-package com.example.cardgame
+package com.example.cardgame.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.DialogFragment
+import com.example.cardgame.GameActivity
+import com.example.cardgame.R
 
 class GameMenuFragment : DialogFragment() {
 
