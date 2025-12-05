@@ -119,38 +119,9 @@ class GameActivity : AppCompatActivity() {
 
     }
 
-    private fun showGameResult(result: GameResult){
-        val (message, colorRes) = when (result) {
-            GameResult.PLAYEBLACKJACK -> "BLACKJACK! YOU WIN!" to R.color.win
-            GameResult.DEALERBLACKJACK -> "DEALER HAS BLACKJACK. YOU LOSE." to R.color.lose
-            GameResult.PLAYERWIN -> "YOU WIN!" to R.color.win
-            GameResult.DEALERWIN -> "DEALER WINS." to R.color.lose
-            GameResult.PUSH -> "PUSH" to R.color.push
-            GameResult.PLAYERBUST -> "YOU BUSTED. DEALER WINS." to R.color.lose
-            GameResult.DEALERBUST-> "DEALER BUSTED. YOU WIN!" to R.color.win
-
-        }
-
-        // replace this with a fragment like gameMenu
-        // this create the box
-        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
-        builder.setTitle("Game Over")
-        builder.setMessage(message)
-        builder.setCancelable(false)
-
-        val dialog = builder.create()
-        dialog.setOnShowListener {
-            val messageView = dialog.findViewById<android.widget.TextView>(android.R.id.message)
-            messageView?.setTextColor(ContextCompat.getColor(this, colorRes))
-            messageView?.textSize = 24f
-            messageView?.gravity = android.view.Gravity.CENTER
-        }
-
-
-        builder.setPositiveButton("NEW GAME") { _, _ ->
-            startNewRound()
-        }
-
-        builder.show()
+    private fun showGameResult(resul: GameResult) {
+        val fragment = GameResultFragment()
+        fragment.show(supportFragmentManager, "GameResultFragment")
     }
+
 }
