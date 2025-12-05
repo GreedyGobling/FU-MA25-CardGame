@@ -58,6 +58,10 @@ class GameResultFragment : DialogFragment() {
             (activity as? GameActivity)?.startNewRound()
             dismiss()
         }
+
+        binding.exitGame.setOnClickListener {
+            requireActivity().finish()
+        }
     }
 
     override fun onDestroyView() {

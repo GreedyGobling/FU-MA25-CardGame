@@ -36,5 +36,15 @@
         android:paddingHorizontal="32dp"
         android:paddingVertical="12dp" />
 
+    <Button
+        android:id="@+id/exitGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit Game"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp" />
+
 </LinearLayout>
 
