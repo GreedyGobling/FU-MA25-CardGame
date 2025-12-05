@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.cardgame.databinding.ActivityGameBinding
 import com.example.cardgame.databinding.CardViewBinding
+import com.example.cardgame.fragment.GameResultFragment
 
 class GameActivity : AppCompatActivity() {
 
