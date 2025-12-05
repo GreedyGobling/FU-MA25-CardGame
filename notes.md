@@ -15,4 +15,8 @@ if return to main manu(need resume to update stuff)
 
 fixed lateinit property gameresult has nolt been initialized???
 
-made changes in GameActivity that gives the fragment a letter with the result. the fragment has a onCreate that reads the letter
+made changes in GameActivity that gives the fragment a letter with the result.
+the fragment has a onCreate that reads the letter.
+
+
+could have used companion object to somehow fix
