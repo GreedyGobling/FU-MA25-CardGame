@@ -19,9 +19,6 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         binding.startmenu.setOnClickListener {
-            //val intent = Intent(this, GameActivity::class.java)
-            //startActivity(intent)
-
             if (GameStats.getCurrentStreak(this) > 0) {
                 val gameMenu = GameMenuFragment()
                 gameMenu.show(supportFragmentManager, "GameMenuDialog")
