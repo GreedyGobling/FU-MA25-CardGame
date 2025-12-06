@@ -17,15 +17,17 @@ class GameActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBinding
 
-    private val game = BlackJack()
+    private var game = BlackJack()
+
+    private val gson = com.google.gson.Gson()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+    if(!loadGameState()) {
         startNewRound()
-
+    }
         // Buttons hit and stand
     binding.bstand.setOnClickListener {
         onStandClick()
@@ -35,6 +37,32 @@ class GameActivity : AppCompatActivity() {
     }
 
 }
+
+    override fun onPause() {
+        super.onPause()
+        saveGameState()
+    }
+
+    private fun saveGameState(){
+        if (game.getPlayerHand().getValue() > 0) {
+            val json = gson.toJson(game)
+            val prefs = getSharedPreferences("blackjack_state", Context.MODE_PRIVATE)
+            prefs.edit().putString("saved_game_state", json).apply()
+        }
+    }
+
+    private fun loadGameState(): Boolean {
+        val prefs = getSharedPreferences("blackjack_state", Context.MODE_PRIVATE)
+        val json = prefs.getString("saved_game_state", null)
+        if (json != null) {
+            val savedGame = gson.fromJson(json, BlackJack::class.java)
+            game = savedGame
+            updatePlayerHand()
+            updatePlayerHand()
+            return true
+        }
+        return false
+    }
 
     fun startNewRound(){
         // clear ui
@@ -114,9 +142,8 @@ class GameActivity : AppCompatActivity() {
         val result = game.determineWinner()
 
         GameStats.saveGameResult(this, result)
+
         showGameResult(result)
-
-
     }
 
     private fun showGameResult(result: GameResult) {
