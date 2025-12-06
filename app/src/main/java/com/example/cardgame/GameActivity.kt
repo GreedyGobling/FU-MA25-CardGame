@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.cardgame.databinding.ActivityGameBinding
 import com.example.cardgame.databinding.CardViewBinding
 import com.example.cardgame.fragment.GameResultFragment
+import kotlin.coroutines.Continuation
 
 class GameActivity : AppCompatActivity() {
 
@@ -58,7 +59,7 @@ class GameActivity : AppCompatActivity() {
             val savedGame = gson.fromJson(json, BlackJack::class.java)
             game = savedGame
             updatePlayerHand()
-            updatePlayerHand()
+            updateDealerHand()
             return true
         }
         return false
@@ -142,7 +143,8 @@ class GameActivity : AppCompatActivity() {
         val result = game.determineWinner()
 
         GameStats.saveGameResult(this, result)
-
+        val prefs = getSharedPreferences("blackjack_state", Context.MODE_PRIVATE)
+        prefs.edit().remove("saved_game_state").apply()
         showGameResult(result)
     }
 
