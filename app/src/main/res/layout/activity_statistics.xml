@@ -63,16 +63,9 @@
         android:text="games played"
         android:textSize="24sp"/>
 
-    <TextView
-        android:paddingTop="24dp"
-        android:id="@+id/text7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="games played"
-        android:textSize="24sp"/>
 
     <LinearLayout
-        android:paddingTop="24dp"
+        android:paddingTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
