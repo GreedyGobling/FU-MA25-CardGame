@@ -26,16 +26,17 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-    if(!loadGameState()) {
         startNewRound()
-    }
-        // Buttons hit and stand
-    binding.bstand.setOnClickListener {
+
+        binding.bstand.setOnClickListener {
         onStandClick()
     }
-    binding.bhit.setOnClickListener {
+        binding.bhit.setOnClickListener {
         onHitClick()
     }
+        binding.midGameExit.setOnClickListener {
+            finish()
+        }
 
 }
 

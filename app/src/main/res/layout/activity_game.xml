@@ -21,14 +21,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textSize="24dp"
         android:id="@+id/bstand"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/button_stand"
         android:text="Stand"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spacer"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:layout_marginTop="264dp"
+        android:id="@+id/midGameExit"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/red"
+        android:text="Exit?"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/bstand"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spacer"
         app:layout_constraintTop_toTopOf="parent" />
