@@ -34,6 +34,9 @@ class GameActivity : AppCompatActivity() {
         binding.bhit.setOnClickListener {
         onHitClick()
     }
+        binding.midGameExit.setOnClickListener {
+            finish()
+        }
 
 }
 
