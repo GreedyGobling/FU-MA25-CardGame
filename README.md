@@ -5,9 +5,8 @@ An Android card game implementation.
 failed to implement resume game.
 
 ## Showcase
-![blackjackshow.gif](blackjackshow.gif)
 <p align="center" >
-<img alt="gameplayDemo" src="![blackjackshow.gif](blackjackshow.gif)" width="300" />
+<img alt="gameplayDemo" src="blackjackshow.gif" width="300" />
 </p>
 
 
