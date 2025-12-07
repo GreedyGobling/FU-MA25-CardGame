@@ -1,22 +1,51 @@
-# Notes 
-need to write down problems 
+# Blackjack
 
-reason for no branches failed to use twice :)
+An Android card game implementation.
 
+failed to implement resume game.
 
-## update 
-the game-menu 
+## Project Structure
 
-### issues 
+```
+app/src/main/java/com/example/cardgame/
+├── BlackJack.kt         # Core game logic and state management
+├── Card.kt              # Card data model with Suit and Rank enums
+├── Deck.kt              # Deck management (shuffle, draw, reset)
+├── GameActivity.kt      # Main game screen activity
+├── GameResult.kt        # Enum for game results (WIN, LOSS, PUSH, etc.)
+├── GameState.kt         # Game state enums (BETTING, PLAYER_TURN, etc.)
+├── GameStats.kt         # Statistics management and persistence
+├── Hand.kt              # Hand logic (value calculation, bust/blackjack detection)
+├── MainActivity.kt      # Main menu entry point
+├── StatisticsActivity.kt # Activity to display game statistics
+└── fragment/
+    ├── GameMenuFragment.kt   # Dialog fragment for resuming/starting new games
+    └── GameResultFragment.kt # Dialog fragment for showing game results
+```
 
-on ipad don't look awesome. place cards in center
+### Sketch
 
-if return to main manu(need resume to update stuff)
+![alt text](<Screenshot - 2025-11-25 17.45.31.png>)
 
-fixed lateinit property gameresult has nolt been initialized???
+### Activity Flow
 
-made changes in GameActivity that gives the fragment a letter with the result.
-the fragment has a onCreate that reads the letter.
+```
+MainActivity (Entry Point)
+├── Start Game
+│   ├── (Streak > 0) -> GameMenuFragment (Dialog)
+│   │   ├── Continue -> GameActivity (Loads saved state)
+│   │   └── New Game -> GameActivity (Starts fresh)
+│   └── (Streak <= 0) -> GameActivity (Starts fresh)
+│
+└── Statistics
+    └── StatisticsActivity
+```
 
+**Navigation Details:**
+- **MainActivity**: Entry point with options to Start Game or view Statistics.
+- **GameMenuFragment**: Appears if there is an active streak/saved game, offering to continue or start over.
+- **GameActivity**: The main game screen where Blackjack is played.
+    - Handles game logic, UI updates, and state saving.
+    - Shows **GameResultFragment** at the end of a round.
+- **StatisticsActivity**: Displays player statistics (wins, losses, streaks).
 
-could have used companion object to somehow fix
